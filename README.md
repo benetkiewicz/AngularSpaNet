@@ -1,3 +1,7 @@
-== Angular Wizard SPA ==
+Angular Wizard SPA
+===================
 
-This is a basic example of SPA wizard based on AngularJS, ASP.NET MVC and Bootstrap.
+This is a basic example of SPA wizard based on:
+* AngularJS
+* ASP.NET MVC 
+* Bootstrap
