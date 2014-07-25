@@ -1,33 +1,33 @@
-﻿<div class="row">
-    <div class="col-md-2 col-md-offset-1">
-        <label for="firstName">First name:</label>
+﻿<div class="form-group" ng-class="{'has-error': submitted && wizard.firstName.$invalid}">
+    <label for="firstName" class="control-label col-sm-2">First name:</label>
+    <div class="col-sm-3">
+        <input type="text" id="firstName" name="firstName" ng-model="viewModel.firstName" required class="form-control" />
     </div>
-    <div class="col-md-9">
-        <input type="text" id="firstName" name="firstName" ng-model="viewModel.firstName" required />
-        <span ng-show="submitted && wizard.firstName.$invalid">First name is required.</span>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-2 col-md-offset-1">
-        <label for="lastName">Last name:</label>
-    </div>
-    <div class="col-md-9">
-        <input type="text" id="lastName" name="lastName" ng-model="viewModel.lastName" required />
-        <span ng-show="submitted && wizard.lastName.$invalid">Last name is required.</span>
+    <div ng-show="submitted && wizard.firstName.$invalid" class="col-sm-2">
+        <span class="text-danger">First name is required.</span>
     </div>
 </div>
 
-<div class="row">
-    <div class="col-md-2 col-md-offset-1">
-        <label for="location">Location:</label>
+<div class="form-group" ng-class="{'has-error': submitted && wizard.lastName.$invalid}">
+    <label for="lastName" class="control-label col-sm-2">Last name:</label>
+    <div class="col-sm-3">
+        <input type="text" id="lastName" name="lastName" ng-model="viewModel.lastName" required class="form-control" />
     </div>
-    <div class="col-md-9">
-        <select ng-model="viewModel.location" id="location" name="location" ng-change="updateCarMakes()" required>
+    <div ng-show="submitted && wizard.firstName.$invalid" class="col-sm-2">
+        <span class="text-danger">Last name is required.</span>
+    </div>
+</div>
+
+<div class="form-group" ng-class="{'has-error': submitted && wizard.location.$invalid}">
+    <label for="location" class="control-label col-sm-2">Location:</label>
+    <div class="col-sm-3">
+        <select ng-model="viewModel.location" id="location" name="location" ng-change="updateCarMakes()" required class="form-control">
             <option value="">Select One</option>
             <option value="E">Europe</option>
             <option value="A">America</option>
         </select>
-        <span ng-show="submitted && wizard.location.$invalid">Location is required.</span>
+    </div>
+    <div ng-show="submitted && wizard.location.$invalid" class="col-sm-2">
+        <span class="text-danger">Location is required.</span>
     </div>
 </div>

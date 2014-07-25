@@ -17,7 +17,7 @@
             <div class="jumbotron"> 
                 <h1>Sample AngularJS Wizard SPA</h1>
             </div>
-            <form name="wizard" novalidate>
+            <form class="form-horizontal" name="wizard" novalidate>
                 <div ng-switch="getCurrentStep()">
                     <div class="row">
                         <div class="col-md-11 col-md-offset-1">
@@ -37,11 +37,11 @@
                         <ng-include src="'scripts/app/views/step3.html'"></ng-include>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-2 col-md-offset-1">
+                    <div class="form-group">
+                        <div class="col-sm-1 col-sm-offset-2">
                             <button ng-click="prevStep()" ng-show="currentStep != 0" class="btn btn-primary">Back</button>
                         </div>
-                        <div class="col-md-9">
+                        <div class="col-sm-1 col-sm-offset-1">
                             <button type="submit" ng-click="nextStep(wizard)" ng-show="!isLastStep()" class="btn btn-primary">Next</button>
                         </div>
                     </div>

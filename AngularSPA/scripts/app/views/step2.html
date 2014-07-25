@@ -1,21 +1,24 @@
-﻿<div class="row">
-    <div class="col-md-2 col-md-offset-1">
-        <label for="car">Car make:</label>
-    </div>
-    <div class="col-md-9">
-        <select ng-model="viewModel.car" id="car" name="car" ng-options="CarMake.Name for CarMake in carMakes" required>
+﻿<div class="form-group" ng-class="{'has-error': submitted && wizard.car.$invalid}">
+    <label for="car" class="control-label col-sm-2">Car make:</label>
+    <div class="col-sm-3">
+        <select ng-model="viewModel.car" id="car" name="car" ng-options="CarMake.Name for CarMake in carMakes" required class="form-control">
             <option value="">Select One</option>
         </select>
-        <span ng-show="submitted && wizard.car.$invalid">Car is required.</span>
+    </div>
+    <div ng-show="submitted && wizard.car.$invalid" class="col-sm-2">
+        <span class="text-danger">Car is required.</span>
     </div>
 </div>
 
-<div class="row">
-    <div class="col-md-2 col-md-offset-1">
-        <label for="distance">Distance:</label>
+<div class="form-group" ng-class="{'has-error': submitted && wizard.distance.$invalid}">
+    <label for="distance" class="control-label col-sm-2">Distance:</label>
+    <div class="col-sm-3">
+        <input type="text" ng-pattern="/^[0-9]{1,7}$/"  id="distance" name="distance" ng-model="viewModel.distance" required class="form-control" />
     </div>
-    <div class="col-md-9">
-        <input type="text" id="distance" name="distance" ng-model="viewModel.distance" required />
-        <span ng-show="submitted && wizard.distance.$invalid">Distance is required.</span>
+    <div ng-show="submitted && wizard.distance.$error.pattern" class="col-sm-2">
+        <span class="text-danger">Valid number is required.</span>
+    </div>
+    <div ng-show="submitted && wizard.distance.$error.required" class="col-sm-2">
+        <span class="text-danger">Distance is required.</span>
     </div>
 </div>
