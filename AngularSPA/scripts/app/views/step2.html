@@ -1,8 +1,19 @@
 ﻿<div class="row">
     <div class="col-md-2 col-md-offset-1">
-        <label for="address">Address:</label>
+        <label for="car">Car make:</label>
     </div>
     <div class="col-md-9">
-        <input type="text" id="address" ng-model="viewModel.address" />
+        <select ng-model="viewModel.car" id="car" ng-options="CarMake.Name for CarMake in carMakes">
+            <option value="">Select One</option>
+        </select>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-2 col-md-offset-1">
+        <label for="distance">Distance:</label>
+    </div>
+    <div class="col-md-9">
+        <input type="text" id="distance" ng-model="viewModel.distance" />
     </div>
 </div>

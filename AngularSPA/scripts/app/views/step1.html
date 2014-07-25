@@ -1,8 +1,30 @@
 ﻿<div class="row">
     <div class="col-md-2 col-md-offset-1">
-        <label for="name">First name:</label>
+        <label for="firstName">First name:</label>
     </div>
     <div class="col-md-9">
-        <input type="text" id="name" ng-model="viewModel.name" />
+        <input type="text" id="firstName" ng-model="viewModel.firstName" />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-2 col-md-offset-1">
+        <label for="lastName">Last name:</label>
+    </div>
+    <div class="col-md-9">
+        <input type="text" id="lastName" ng-model="viewModel.lastName" />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-2 col-md-offset-1">
+        <label for="location">Location:</label>
+    </div>
+    <div class="col-md-9">
+        <select ng-model="viewModel.location" id="location" ng-change="updateCarMakes()">
+            <option value="">Select One</option>
+            <option value="E">Europe</option>
+            <option value="A">America</option>
+        </select>
     </div>
 </div>
