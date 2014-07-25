@@ -21,10 +21,8 @@
 <div class="form-group" ng-class="{'has-error': submitted && wizard.location.$invalid}">
     <label for="location" class="control-label col-sm-2">Location:</label>
     <div class="col-sm-3">
-        <select ng-model="viewModel.location" id="location" name="location" ng-change="updateCarMakes()" required class="form-control">
+        <select ng-model="viewModel.location" ng-options="loc.name for loc in locations" id="location" name="location" ng-change="updateCarMakes()" required class="form-control">
             <option value="">Select One</option>
-            <option value="E">Europe</option>
-            <option value="A">America</option>
         </select>
     </div>
     <div ng-show="submitted && wizard.location.$invalid" class="col-sm-2">

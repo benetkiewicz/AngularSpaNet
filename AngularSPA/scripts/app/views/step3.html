@@ -1,11 +1,14 @@
-﻿W<div class="panel panel-info">
+﻿<p>
+    Please review the following data summary before submitting. Submit the form if it looks correct or go back and adjust.
+</p>
+<div class="panel panel-info">
     <div class="panel-heading">
-        Please review the following data before submitting. Submit the form if it looks correct or go back and adjust.
+        Summary
     </div>
     <ul class="list-group">
         <li class="list-group-item"><strong>First name:</strong> {{viewModel.firstName}}</li>
         <li class="list-group-item"><strong>Last name:</strong> {{viewModel.lastName}}</li>
-        <li class="list-group-item"><strong>Location:</strong> {{viewModel.location}}</li>
+        <li class="list-group-item"><strong>Location:</strong> {{viewModel.location.name}}</li>
         <li class="list-group-item"><strong>Car:</strong> {{viewModel.car.Name}}</li>
         <li class="list-group-item"><strong>Distance:</strong> {{viewModel.distance}}</li>
     </ul>

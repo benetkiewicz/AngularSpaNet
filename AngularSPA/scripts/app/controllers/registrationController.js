@@ -3,6 +3,7 @@
     $scope.currentStep = 0;
     $scope.viewModel = {};
     $scope.submitted = false;
+    $scope.locations = [{id: 'E', name: 'Europe'}, {id: 'A', name: 'America'}];
     
     $scope.nextStep = function (form) {
         $scope.submitted = true;
@@ -27,9 +28,12 @@
     };
 
     $scope.updateCarMakes = function() {
-        carMakeService.getCarMakes($scope.viewModel.location).success(function(data) {
+        carMakeService.getCarMakes($scope.viewModel.location.id).success(function(data) {
             $scope.carMakes = data;
         });
     };
 
+    $scope.submit = function() {
+        alert('Submitted!');
+    };
 }]);
