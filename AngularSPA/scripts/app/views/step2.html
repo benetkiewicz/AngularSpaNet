@@ -3,9 +3,10 @@
         <label for="car">Car make:</label>
     </div>
     <div class="col-md-9">
-        <select ng-model="viewModel.car" id="car" ng-options="CarMake.Name for CarMake in carMakes">
+        <select ng-model="viewModel.car" id="car" name="car" ng-options="CarMake.Name for CarMake in carMakes" required>
             <option value="">Select One</option>
         </select>
+        <span ng-show="submitted && wizard.car.$invalid">Car is required.</span>
     </div>
 </div>
 
@@ -14,6 +15,7 @@
         <label for="distance">Distance:</label>
     </div>
     <div class="col-md-9">
-        <input type="text" id="distance" ng-model="viewModel.distance" />
+        <input type="text" id="distance" name="distance" ng-model="viewModel.distance" required />
+        <span ng-show="submitted && wizard.distance.$invalid">Distance is required.</span>
     </div>
 </div>

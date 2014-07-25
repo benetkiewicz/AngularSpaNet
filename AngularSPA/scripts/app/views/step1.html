@@ -3,7 +3,8 @@
         <label for="firstName">First name:</label>
     </div>
     <div class="col-md-9">
-        <input type="text" id="firstName" ng-model="viewModel.firstName" />
+        <input type="text" id="firstName" name="firstName" ng-model="viewModel.firstName" required />
+        <span ng-show="submitted && wizard.firstName.$invalid">First name is required.</span>
     </div>
 </div>
 
@@ -12,7 +13,8 @@
         <label for="lastName">Last name:</label>
     </div>
     <div class="col-md-9">
-        <input type="text" id="lastName" ng-model="viewModel.lastName" />
+        <input type="text" id="lastName" name="lastName" ng-model="viewModel.lastName" required />
+        <span ng-show="submitted && wizard.lastName.$invalid">Last name is required.</span>
     </div>
 </div>
 
@@ -21,10 +23,11 @@
         <label for="location">Location:</label>
     </div>
     <div class="col-md-9">
-        <select ng-model="viewModel.location" id="location" ng-change="updateCarMakes()">
+        <select ng-model="viewModel.location" id="location" name="location" ng-change="updateCarMakes()" required>
             <option value="">Select One</option>
             <option value="E">Europe</option>
             <option value="A">America</option>
         </select>
+        <span ng-show="submitted && wizard.location.$invalid">Location is required.</span>
     </div>
 </div>
