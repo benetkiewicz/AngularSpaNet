@@ -109,9 +109,9 @@
     <Content Include="Content\bootstrap.css.map" />
     <None Include="scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="scripts\app\services\carMakeService.js" />
-    <Content Include="scripts\app\views\step2.html" />
-    <Content Include="scripts\app\views\step3.html" />
-    <Content Include="scripts\app\views\step1.html" />
+    <Content Include="views\step2.html" />
+    <Content Include="views\step3.html" />
+    <Content Include="views\step1.html" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\jquery-2.1.1.js" />
