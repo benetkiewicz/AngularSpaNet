@@ -10,6 +10,6 @@
         <li class="list-group-item"><strong>Last name:</strong> {{viewModel.lastName}}</li>
         <li class="list-group-item"><strong>Location:</strong> {{viewModel.location.name}}</li>
         <li class="list-group-item"><strong>Car:</strong> {{viewModel.car.Name}}</li>
-        <li class="list-group-item"><strong>Distance:</strong> {{viewModel.distance}}</li>
+        <li class="list-group-item"><strong>Distance:</strong>&nbsp;<localizeddistance distance="{{viewModel.distance}}" location="{{viewModel.location.id}}"></localizeddistance></li>
     </ul>
 </div>

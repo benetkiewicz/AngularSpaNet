@@ -108,6 +108,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <None Include="scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="scripts\app\directives\localizedDistance.js" />
     <Content Include="scripts\app\services\carMakeService.js" />
     <Content Include="views\step2.html" />
     <Content Include="views\step3.html" />
