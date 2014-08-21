@@ -7,14 +7,14 @@
         <script src="scripts/application" type="text/javascript"></script>
     </head>
     <body>
-        <div ng-app="registration" ng-controller="RegistrationCtrl" class="container">
+        <div ng-app="registration" ng-controller="RegistrationCtrl as registration" class="container">
             <div class="jumbotron"> 
                 <h1>Sample AngularJS Wizard SPA</h1>
             </div>
             <form class="form-horizontal" name="wizard" novalidate>
-                <div ng-switch="getCurrentStep()">
+                <div ng-switch="registration.getCurrentStep()">
                     <fieldset>
-                        <legend>Step {{currentStep+1}}</legend>
+                        <legend>Step {{registration.currentStep+1}}</legend>
                         <div ng-switch-when="step1">
                             <ng-include src="'views/step1.html'"></ng-include>
                         </div>
@@ -29,11 +29,11 @@
 
                         <div class="form-group">
                             <div class="col-sm-1 col-sm-offset-2">
-                                <button ng-click="prevStep()" ng-show="currentStep != 0" class="btn btn-primary">Back</button>
+                                <button ng-click="registration.prevStep()" ng-show="registration.currentStep != 0" class="btn btn-primary">Back</button>
                             </div>
                             <div class="col-sm-1 col-sm-offset-1">
-                                <button type="submit" ng-click="nextStep(wizard)" ng-show="!isLastStep()" class="btn btn-primary">Next</button>
-                                <button type="submit" ng-click="submit()" ng-show="isLastStep()" class="btn btn-danger">Submit</button>
+                                <button type="submit" ng-click="registration.nextStep(wizard)" ng-show="!registration.isLastStep()" class="btn btn-primary">Next</button>
+                                <button type="submit" ng-click="registration.submit()" ng-show="registration.isLastStep()" class="btn btn-danger">Submit</button>
                             </div>
                         </div>
                     </fieldset>
