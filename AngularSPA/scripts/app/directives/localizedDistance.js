@@ -1,17 +1,22 @@
 ﻿(function() {
     angular
         .module('registration')
-        .directive("localizeddistance", function() {
-            return {
-                restrict: "E",
-                link: function(scope, element, attrs) {
-                    var unit = "km";
-                    if (attrs.location === "A") {
-                        unit = "mi";
-                    }
+        .directive("localizeddistance", localizeddistance);
 
-                    element.text(attrs.distance + " " + unit);
-                }
-            };
-        });
+    function localizeddistance() {
+        var directive = {
+            restrict: "E",
+            link: link
+        };
+        return directive;
+
+        function link(scope, element, attrs) {
+            var unit = "km";
+            if (attrs.location === "A") {
+                unit = "mi";
+            }
+
+            element.text(attrs.distance + " " + unit);
+        }
+    }
 })();
