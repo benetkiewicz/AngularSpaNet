@@ -1,17 +1,17 @@
 ﻿(function() {
     angular
-        .module('registration')
-        .controller('RegistrationCtrl', Registration);
-    Registration.$inject = ['$location', 'carMakeService'];
+        .module("registration")
+        .controller("RegistrationCtrl", Registration);
+    Registration.$inject = ["$location", "carMakeService"];
 
     function Registration($location, carMakeService) {
         var registration = this;
 
-        var steps = ['step1', 'step2', 'step3'];
+        var steps = ["step1", "step2", "step3"];
         registration.currentStep = 0;
         registration.viewModel = {};
         registration.submitted = false;
-        registration.locations = [{ id: 'E', name: 'Europe' }, { id: 'A', name: 'America' }];
+        registration.locations = [{ id: "E", name: "Europe" }, { id: "A", name: "America" }];
 
         registration.nextStep = function(form) {
             registration.submitted = true;
@@ -28,7 +28,7 @@
         };
 
         registration.isLastStep = function() {
-            return registration.currentStep == steps.length - 1;
+            return registration.currentStep === steps.length - 1;
         };
 
         registration.getCurrentStep = function() {
@@ -43,7 +43,7 @@
         };
 
         registration.submit = function() {
-            alert('Submitted!');
+            alert("Submitted!");
         };
     }
 })();

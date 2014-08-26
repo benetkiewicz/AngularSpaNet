@@ -107,6 +107,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="scripts\app\.jshintrc" />
     <None Include="scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="scripts\app\directives\localizedDistance.js" />
     <Content Include="scripts\app\services\carMakeService.js" />

@@ -1,6 +1,6 @@
 ﻿(function() {
-    angular.module('registration', ['ngRoute']).config(function($routeProvider) {
-        'use strict';
+    angular.module("registration", ["ngRoute"]).config(function($routeProvider) {
+        "use strict";
         $routeProvider.when("/step1", {
             controller: "RegistrationCtrl",
             controllerAs: "registration",
