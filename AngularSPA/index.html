@@ -33,7 +33,7 @@
                             </div>
                             <div class="col-sm-1 col-sm-offset-1">
                                 <button type="submit" ng-click="registration.nextStep(wizard)" ng-show="!registration.isLastStep()" class="btn btn-primary">Next</button>
-                                <button type="submit" ng-click="registration.submit()" ng-show="registration.isLastStep()" class="btn btn-danger">Submit</button>
+                                <button type="submit" ng-click="registration.submit(registration.viewModel)" ng-show="registration.isLastStep()" class="btn btn-danger">Submit</button>
                             </div>
                         </div>
                     </fieldset>

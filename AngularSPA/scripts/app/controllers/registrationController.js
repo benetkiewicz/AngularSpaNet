@@ -2,9 +2,9 @@
     angular
         .module("registration")
         .controller("RegistrationCtrl", Registration);
-    Registration.$inject = ["$location", "carMakeService"];
+    Registration.$inject = ["$location", "carMakeService", "registrationService"];
 
-    function Registration($location, carMakeService) {
+    function Registration($location, carMakeService, registrationService) {
         var registration = this;
 
         var steps = ["step1", "step2", "step3"];
@@ -37,13 +37,12 @@
 
         registration.updateCarMakes = function() {
             carMakeService.getCarMakes(registration.viewModel.location.id).success(function (data) {
-                console.dir(data);
                 registration.carMakes = data;
             });
         };
 
-        registration.submit = function() {
-            alert("Submitted!");
+        registration.submit = function (viewModel) {
+            registrationService.register(viewModel);
         };
     }
 })();
