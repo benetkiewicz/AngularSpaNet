@@ -2,16 +2,26 @@
     angular
         .module("registration")
         .controller("RegistrationCtrl", Registration);
-    Registration.$inject = ["$location", "carMakeService", "registrationService"];
+    Registration.$inject = ["$location", "carManufacturersService", "registrationService"];
 
-    function Registration($location, carMakeService, registrationService) {
+    function Registration($location, carManufacturersService, registrationService) {
         var registration = this;
 
         var steps = ["step1", "step2", "step3"];
         registration.currentStep = 0;
         registration.viewModel = {};
         registration.submitted = false;
-        registration.locations = [{ id: "E", name: "Europe" }, { id: "A", name: "America" }];
+        registration.locations = [];
+
+        carManufacturersService.getWorldRegions()
+            .success(function(data) {
+                var tmpLocations = [];
+                data.forEach(function(item) {
+                    var location = { id: item.Id, name: item.Name };
+                    tmpLocations.push(location);
+                });
+                registration.locations = tmpLocations;
+            });
 
         registration.nextStep = function(form) {
             registration.submitted = true;
@@ -35,10 +45,12 @@
             return steps[registration.currentStep];
         };
 
-        registration.updateCarMakes = function() {
-            carMakeService.getCarMakes(registration.viewModel.location.id).success(function (data) {
-                registration.carMakes = data;
-            });
+        registration.updateCarMakes = function () {
+            console.dir(registration.viewModel.location);
+            carManufacturersService.getCarManufacturersByWorldRegion(registration.viewModel.location.id)
+                .success(function(data) {
+                    registration.carMakes = data;
+                });
         };
 
         registration.submit = function (viewModel) {

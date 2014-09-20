@@ -110,7 +110,7 @@
     <Content Include="scripts\app\.jshintrc" />
     <None Include="scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="scripts\app\directives\localizedDistance.js" />
-    <Content Include="scripts\app\services\carMakeService.js" />
+    <Content Include="scripts\app\services\carManufacturersService.js" />
     <Content Include="scripts\app\services\registrationService.js" />
     <Content Include="views\step2.html" />
     <Content Include="views\step3.html" />
@@ -125,13 +125,14 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\CarMakeController.cs" />
+    <Compile Include="Controllers\CarManufacturersController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
+    <Compile Include="DataSource\CarManufacturersRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\CarMake.cs" />
-    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\CarManufacturer.cs" />
+    <Compile Include="Models\WorldRegion.cs" />
     <Compile Include="Models\Registration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

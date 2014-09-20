@@ -2,7 +2,7 @@ namespace AngularSPA.Models
 {
     using System.ComponentModel.DataAnnotations;
 
-    public class Location
+    public class WorldRegion
     {
         [RegularExpression("^(E|A)$")]
         public string Id { get; set; }

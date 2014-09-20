@@ -13,8 +13,8 @@ namespace AngularSPA.Models
 
         public int Distance { get; set; }
 
-        public CarMake Car { get; set; }
+        public CarManufacturer Car { get; set; }
 
-        public Location Location { get; set; }
+        public WorldRegion Location { get; set; }
     }
 }

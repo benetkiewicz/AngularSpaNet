@@ -2,7 +2,7 @@
 {
     using System.ComponentModel.DataAnnotations;
 
-    public class CarMake
+    public class CarManufacturer
     {
         public string Name { get; set; }
 
