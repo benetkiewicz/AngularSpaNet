@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace AngularSPA.Controllers
 {
-    using System.ComponentModel.DataAnnotations;
+    using Models;
 
     public class RegistrationController : ApiController
     {
@@ -20,14 +20,5 @@ namespace AngularSPA.Controllers
 
             return registration;
         }
-    }
-
-    public class Registration
-    {
-        [Required]
-        public string firstName { get; set; }
-
-        [Required]
-        public string lastName { get; set; }
     }
 }

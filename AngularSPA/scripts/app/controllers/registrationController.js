@@ -42,7 +42,16 @@
         };
 
         registration.submit = function (viewModel) {
-            registrationService.register(viewModel);
+            registrationService
+                .register(viewModel)
+                .success(function(data) {
+                    console.dir(data);
+                    alert("OK!");
+                })
+                .error(function(data) {
+                    console.dir(data);
+                    alert("Failed!");
+                });
         };
     }
 })();

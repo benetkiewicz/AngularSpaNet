@@ -7,6 +7,8 @@ using System.Web.Http;
 
 namespace AngularSPA.Controllers
 {
+    using Models;
+
     public class CarMakeController : ApiController
     {
         public List<CarMake> GetCarMakes(string id)
@@ -34,11 +36,5 @@ namespace AngularSPA.Controllers
                     throw new HttpResponseException(HttpStatusCode.NotFound);
             }
         } 
-    }
-
-    public class CarMake
-    {
-        public string Name { get; set; }
-        public string Id { get; set; }
     }
 }
