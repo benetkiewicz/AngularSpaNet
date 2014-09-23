@@ -15,7 +15,14 @@ namespace AngularSPA.Controllers
         {
             if (!ModelState.IsValid)
             {
-                throw new HttpResponseException(Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState));
+                List<string> validationErrorMessages = new List<string>();
+                foreach (var modelStateKey in ModelState.Keys)
+                {
+                    validationErrorMessages.AddRange(ModelState[modelStateKey].Errors.Select(error => error.ErrorMessage));
+                }
+
+                HttpResponseMessage msg = Request.CreateResponse(HttpStatusCode.BadRequest, validationErrorMessages);
+                throw new HttpResponseException(msg);
             }
 
             return registration;

@@ -1,12 +1,12 @@
-﻿<div class="form-group" ng-class="{'has-error': registration.submitted && wizard.car.$invalid}">
-    <label for="car" class="control-label col-sm-2">Car make:</label>
+﻿<div class="form-group" ng-class="{'has-error': registration.submitted && wizard.carManufacturer.$invalid}">
+    <label for="carManufacturer" class="control-label col-sm-2">Car manufacturer:</label>
     <div class="col-sm-3">
-        <select ng-model="registration.viewModel.car" id="car" name="car" ng-options="CarMake.Name for CarMake in registration.carMakes" required class="form-control">
+        <select ng-model="registration.viewModel.carManufacturer" id="carManufacturer" name="carManufacturer" ng-options="manufacturer.Name for manufacturer in registration.carManufacturers" required class="form-control">
             <option value="">Select One</option>
         </select>
     </div>
-    <div ng-show="registration.submitted && wizard.car.$invalid" class="col-sm-2">
-        <span class="text-danger">Car is required.</span>
+    <div ng-show="registration.submitted && wizard.carManufacturer.$invalid" class="col-sm-2">
+        <span class="text-danger">Car manufacturer is required.</span>
     </div>
 </div>
 

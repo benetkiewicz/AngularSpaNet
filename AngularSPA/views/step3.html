@@ -8,8 +8,9 @@
     <ul class="list-group">
         <li class="list-group-item"><strong>First name:</strong> {{registration.viewModel.firstName}}</li>
         <li class="list-group-item"><strong>Last name:</strong> {{registration.viewModel.lastName}}</li>
-        <li class="list-group-item"><strong>Location:</strong> {{registration.viewModel.location.name}}</li>
-        <li class="list-group-item"><strong>Car:</strong> {{registration.viewModel.car.Name}}</li>
-        <li class="list-group-item"><strong>Distance:</strong>&nbsp;<localizeddistance distance="{{registration.viewModel.distance}}" location="{{registration.viewModel.location.id}}"></localizeddistance></li>
+        <li class="list-group-item"><strong>Location:</strong> {{registration.viewModel.location.Name}}</li>
+        <li class="list-group-item"><strong>Car Manufacturer:</strong> {{registration.viewModel.carManufacturer.Name}}</li>
+        <li class="list-group-item"><strong>Distance:</strong>&nbsp;<localizeddistance distance="{{registration.viewModel.distance}}" location="{{registration.viewModel.location.Id}}"></localizeddistance></li>
     </ul>
+    <div>{{registration.list}}</div>
 </div>

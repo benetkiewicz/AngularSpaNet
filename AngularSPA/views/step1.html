@@ -19,9 +19,9 @@
 </div>
 
 <div class="form-group" ng-class="{'has-error': registration.submitted && wizard.location.$invalid}">
-    <label for="location" class="control-label col-sm-2">Location:</label>
+    <label for="location" class="control-label col-sm-2">World region:</label>
     <div class="col-sm-3">
-        <select ng-model="registration.viewModel.location" ng-options="loc.name for loc in registration.locations track by loc.id" id="location" name="location" ng-change="registration.updateCarMakes()" required class="form-control">
+        <select ng-model="registration.viewModel.location" ng-options="region.Name for region in registration.worldRegions track by region.Id" id="location" name="location" ng-change="registration.updateCarManufacturers(registration.viewModel.location)" required class="form-control">
             <option value="">Select One</option>
         </select>
     </div>

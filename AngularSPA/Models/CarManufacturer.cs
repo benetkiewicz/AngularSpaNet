@@ -6,7 +6,7 @@
     {
         public string Name { get; set; }
 
-        [RegularExpression("^(BU|FD|FT|VW)$")]
+        [RegularExpression("^(BU|FD|FT|WV)$")]
         public string Id { get; set; }
     }
 }

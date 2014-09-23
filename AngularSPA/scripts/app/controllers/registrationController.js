@@ -11,17 +11,13 @@
         registration.currentStep = 0;
         registration.viewModel = {};
         registration.submitted = false;
-        registration.locations = [];
+        registration.worldRegions = [];
+        registration.list = "";
 
         carManufacturersService.getWorldRegions()
             .success(function(data) {
-                var tmpLocations = [];
-                data.forEach(function(item) {
-                    var location = { id: item.Id, name: item.Name };
-                    tmpLocations.push(location);
-                });
-                registration.locations = tmpLocations;
-            });
+                registration.worldRegions = data;
+        });
 
         registration.nextStep = function(form) {
             registration.submitted = true;
@@ -45,24 +41,21 @@
             return steps[registration.currentStep];
         };
 
-        registration.updateCarMakes = function () {
-            console.dir(registration.viewModel.location);
-            carManufacturersService.getCarManufacturersByWorldRegion(registration.viewModel.location.id)
+        registration.updateCarManufacturers = function (worldRegion) {
+            carManufacturersService.getCarManufacturersByWorldRegion(worldRegion.Id)
                 .success(function(data) {
-                    registration.carMakes = data;
+                    registration.carManufacturers = data;
                 });
         };
 
-        registration.submit = function (viewModel) {
+        registration.submit = function(viewModel) {
             registrationService
                 .register(viewModel)
                 .success(function(data) {
-                    console.dir(data);
                     alert("OK!");
                 })
                 .error(function(data) {
-                    console.dir(data);
-                    alert("Failed!");
+                    registration.list = data.join("<br />");
                 });
         };
     }
