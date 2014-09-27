@@ -91,6 +91,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\style.css" />
+    <Content Include="css\jasmine.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
@@ -112,6 +113,9 @@
     <Content Include="scripts\app\directives\localizedDistance.js" />
     <Content Include="scripts\app\services\carManufacturersService.js" />
     <Content Include="scripts\app\services\registrationService.js" />
+    <Content Include="scripts\app\specs\servicesSpecs.js" />
+    <Content Include="scripts\jasmine-html.js" />
+    <Content Include="scripts\jasmine.js" />
     <Content Include="views\step2.html" />
     <Content Include="views\step3.html" />
     <Content Include="views\step1.html" />
